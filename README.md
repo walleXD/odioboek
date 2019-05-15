@@ -1,5 +1,8 @@
 # Odioboek
 
+[![Build Status](https://travis-ci.org/walleXD/odioboek.svg?branch=master)](https://travis-ci.org/walleXD/odioboek)
+[![Coverage Status](https://coveralls.io/repos/github/walleXD/odioboek/badge.svg?branch=master)](https://coveralls.io/github/walleXD/odioboek?branch=master)
+
 ### Development Scripts
 
 ```bash
