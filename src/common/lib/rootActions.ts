@@ -1,5 +1,5 @@
-import { routerActions } from "connected-react-router"
+import testCaseAction from "../features/testCase/actions"
 
 export default {
-  router: routerActions
+  testCase: testCaseAction
 }

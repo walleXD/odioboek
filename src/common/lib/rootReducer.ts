@@ -1,5 +1,10 @@
 import { combineReducers, Reducer } from "redux"
 
-const rootReducer = (): Reducer => combineReducers({})
+import testCaseReducer from "../features/testCase/reducer"
+
+const rootReducer = (): Reducer =>
+  combineReducers({
+    testCase: testCaseReducer
+  })
 
 export default rootReducer
