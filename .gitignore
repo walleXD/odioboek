@@ -8,7 +8,6 @@ coverage/*.json
 coverage/*.xml
 coverage/*.info
 coverage/lcov-report/
-__snapshots__/
 
 ### Linux ###
 *~
