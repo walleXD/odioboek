@@ -20,22 +20,25 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.3",
-    "electron": "^5.0.1",
-    "electron-builder": "^20.40.2",
-    "electron-webpack": "^2.6.2",
-    "electron-webpack-ts": "^3.2.0",
-    "typescript": "^3.4.5",
-    "webpack": "4.31.0",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
+    "devtron": "^1.4.0",
+    "electron": "^5.0.1",
+    "electron-builder": "^20.40.2",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-webpack": "^2.6.2",
+    "electron-webpack-ts": "^3.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5",
+    "webpack": "4.31.0"
   }
 }
