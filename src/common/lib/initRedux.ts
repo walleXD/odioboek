@@ -1,10 +1,17 @@
 import { createStore, applyMiddleware, Middleware, Store } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import logger from "redux-logger"
+import { persistStore, Persistor, persistReducer } from "redux-persist"
+import createElectronStorage from "redux-persist-electron-storage"
 
 import rootReducer from "./rootReducer"
 
-export default (dev: boolean): Store => {
+export interface CreateStore {
+  store: Store
+  persistor: Persistor
+}
+
+export default (dev: boolean): CreateStore => {
   // configure middlewares
   const middlewares: Middleware[] = []
   const devMiddlewares: Middleware[] = [logger]
@@ -18,8 +25,19 @@ export default (dev: boolean): Store => {
   const initialState = {}
   const reducer = rootReducer()
 
-  // create store
-  const store = createStore(reducer, initialState, enhancer)
+  // redux persist setup
+  const persistConfig = {
+    key: "root",
+    storage: createElectronStorage()
+  }
+  const persistedReducer = persistReducer(persistConfig, reducer)
 
-  return store
+  // create store
+  const store = createStore(persistedReducer, initialState, enhancer)
+  const persistor = persistStore(store)
+
+  return {
+    store,
+    persistor
+  }
 }
