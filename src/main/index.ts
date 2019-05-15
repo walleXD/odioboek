@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from "electron"
 import * as path from "path"
 import { format as formatUrl } from "url"
+import windowStateKeeper from "electron-window-state"
 
 import initExt from "./utils/initExtensions"
 
@@ -10,18 +11,26 @@ const isDevelopment = process.env.NODE_ENV !== "production"
 let mainWindow: BrowserWindow | null
 
 const createMainWindow = (): BrowserWindow => {
+  const mainWindowState = windowStateKeeper({
+    defaultWidth: 1000,
+    defaultHeight: 800
+  })
+
   const window = new BrowserWindow({
+    x: mainWindowState.x,
+    y: mainWindowState.y,
+    width: mainWindowState.width,
+    height: mainWindowState.height,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
   if (isDevelopment) {
+    // load devtools
     initExt()
     window.webContents.openDevTools()
-  }
 
-  if (isDevelopment) {
     window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`)
   } else {
     window.loadURL(
@@ -52,6 +61,7 @@ const createMainWindow = (): BrowserWindow => {
     }
   )
 
+  mainWindowState.manage(window)
   return window
 }
 
