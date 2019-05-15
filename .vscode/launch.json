@@ -25,21 +25,43 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Odioboek: Tests",
-      "program": "${workspaceRoot}/node_modules/.bin/jest",
-      "args": ["--watch", "--config", "${workspaceRoot}/jest.config.js"],
+      "name": "Odioboek: All Tests",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["--runInBand", "--watch"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {
-        "program": "${workspaceRoot}/node_modules/jest/bin/jest"
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Odioboek: Current Test",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "${fileBasenameNoExtension}",
+        "--config",
+        "jest.config.js",
+        "--watch"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
     }
   ],
   "compounds": [
     {
       "name": "Odioboek: All",
-      "configurations": ["Odioboek: Main", "Odioboek: Renderer"]
+      "configurations": [
+        "Odioboek: Main",
+        "Odioboek: Renderer",
+        "Odioboek: All Tests"
+      ]
     }
   ]
 }
