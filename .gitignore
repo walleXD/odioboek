@@ -3,6 +3,13 @@ dist/
 node_modules/
 thumbs.db
 
+# testing
+coverage/*.json
+coverage/*.xml
+coverage/*.info
+coverage/lcov-report/
+__snapshots__/
+
 ### Linux ###
 *~
 
