@@ -1,9 +1,6 @@
-import { createElement } from 'react'
-import { render } from 'react-dom'
+import { createElement } from "react"
+import { render } from "react-dom"
 
-import App from './App'
+import App from "./App"
 
-render(
-    createElement(App),
-    document.getElementById('app')
-)
+render(createElement(App), document.getElementById("app"))
