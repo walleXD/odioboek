@@ -57,11 +57,7 @@
   "compounds": [
     {
       "name": "Odioboek: All",
-      "configurations": [
-        "Odioboek: Main",
-        "Odioboek: Renderer",
-        "Odioboek: All Tests"
-      ]
+      "configurations": ["Odioboek: Main", "Odioboek: Renderer"]
     }
   ]
 }

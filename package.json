@@ -10,7 +10,8 @@
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
     "coverage": "yarn test --coverage",
-    "coveralls": "yarn coverage --coverageReporters=text-lcov | coveralls"
+    "coveralls": "yarn coverage --coverageReporters=text-lcov | coveralls",
+    "postinstall": "electron-webpack dll"
   },
   "dependencies": {
     "@material-ui/core": "next",
