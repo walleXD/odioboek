@@ -21,6 +21,19 @@
       "port": 9223,
       "webRoot": "${workspaceFolder}",
       "timeout": 30000
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Odioboek: Tests",
+      "program": "${workspaceRoot}/node_modules/.bin/jest",
+      "args": ["--watch", "--config", "${workspaceRoot}/jest.config.js"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceRoot}/node_modules/jest/bin/jest"
+      }
     }
   ],
   "compounds": [

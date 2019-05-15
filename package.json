@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
+    "test": "jest",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
@@ -16,11 +17,14 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^6.0.0-beta",
     "react-router-dom": "^5.0.0",
+    "remove": "^0.1.5",
     "source-map-support": "^0.5.12",
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "@jest-runner/electron": "^1.1.1",
     "@types/electron-devtools-installer": "^2.2.0",
+    "@types/jest": "^24.0.13",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
@@ -38,7 +42,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "jest": "^24.8.0",
+    "jest-electron-runner": "^0.0.2",
     "prettier": "^1.17.1",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
     "webpack": "4.31.0"
   }
