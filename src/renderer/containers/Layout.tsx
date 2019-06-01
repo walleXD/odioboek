@@ -1,7 +1,4 @@
 import React, { FC, ReactElement } from "react"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import ListItem from "@material-ui/core/ListItem"
@@ -16,28 +13,20 @@ import { createStyles, Theme, makeStyles } from "@material-ui/core/styles"
 import { CSSProperties } from "@material-ui/styles"
 import cn from "classnames"
 
+import TopBar from "../componenets/TopBar"
+
 const drawerWidth = 240
 
 const useStyles = makeStyles(
   (
     theme: Theme
   ): Record<
-    | "root"
-    | "appBar"
-    | "drawer"
-    | "drawerPaper"
-    | "toolbar"
-    | "content"
-    | "drag",
+    "root" | "drawer" | "drawerPaper" | "toolbar" | "content" | "drag",
     CSSProperties
   > =>
     createStyles({
       root: {
         display: "flex"
-      },
-      appBar: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth
       },
       drawer: {
         width: drawerWidth,
@@ -67,16 +56,6 @@ interface Props {
 
 const Layout: FC<Props> = ({ title, children }): ReactElement => {
   const classes = useStyles()
-
-  const header = (
-    <AppBar position="sticky" className={cn(classes.appBar, classes.drag)}>
-      <Toolbar variant="dense">
-        <Typography variant="h6" color="inherit">
-          {title}
-        </Typography>
-      </Toolbar>
-    </AppBar>
-  )
 
   const main = (
     <Container>
@@ -116,7 +95,7 @@ const Layout: FC<Props> = ({ title, children }): ReactElement => {
   return (
     <>
       <header>
-        {header}
+        <TopBar title={title} />
         {drawer}
       </header>
       <main className={classes.content}>{main}</main>
