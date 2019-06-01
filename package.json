@@ -40,11 +40,12 @@
     "typesafe-actions": "^4.3.0"
   },
   "devDependencies": {
-    "@jest-runner/electron": "^1.1.1",
+    "@jest-runner/electron": "^2.0.0",
+    "@testing-library/react": "^8.0.1",
     "@types/classnames": "^2.2.8",
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.18",
+    "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",
     "@types/react-redux": "^7.0.9",
@@ -68,10 +69,12 @@
     "jest": "^24.8.0",
     "jest-dom": "^3.2.2",
     "prettier": "^1.17.1",
-    "react-testing-library": "^7.0.0",
     "redux-logger": "^3.0.6",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
     "webpack": "4.31.0"
+  },
+  "resolutions": {
+    "@types/react": "^16.8.19"
   }
 }
