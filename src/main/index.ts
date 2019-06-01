@@ -21,6 +21,7 @@ const createMainWindow = (): BrowserWindow => {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
+    titleBarStyle: "hiddenInset",
     webPreferences: {
       nodeIntegration: true
     }
