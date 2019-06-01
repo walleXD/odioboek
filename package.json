@@ -37,8 +37,7 @@
     "source-map-support": "^0.5.12",
     "tslib": "^1.9.3",
     "typeface-roboto": "^0.0.54",
-    "typesafe-actions": "^4.3.0",
-    "use-react-router": "^1.0.7"
+    "typesafe-actions": "^4.3.0"
   },
   "devDependencies": {
     "@jest-runner/electron": "^1.1.1",

@@ -10,7 +10,8 @@ import InputBase from "@material-ui/core/InputBase"
 import ArrowBack from "@material-ui/icons/ArrowBack"
 import SearchIcon from "@material-ui/icons/Search"
 import { fade } from "@material-ui/core/styles/colorManipulator"
-import useReactRouter from "use-react-router"
+import { withRouter } from "react-router"
+import { RouteComponentProps } from "react-router"
 
 const drawerWidth = 240
 
@@ -79,13 +80,13 @@ const useStyles = makeStyles(
     })
 )
 
-interface Props {
+interface Props extends RouteComponentProps {
   title: string
 }
 
-const TopBar: FC<Props> = ({ title }): ReactElement => {
+const TopBar: FC<Props> = ({ title, history }): ReactElement => {
   const classes = useStyles()
-  const { history } = useReactRouter()
+  // const { history } = useReactRouter()
 
   const arrows = (
     <IconButton
@@ -130,4 +131,4 @@ const TopBar: FC<Props> = ({ title }): ReactElement => {
   )
 }
 
-export default TopBar
+export default withRouter(TopBar)
