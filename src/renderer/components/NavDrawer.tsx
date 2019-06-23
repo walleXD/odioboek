@@ -8,32 +8,28 @@ import List from "@material-ui/core/List"
 import Divider from "@material-ui/core/Divider"
 import Drawer from "@material-ui/core/Drawer"
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles"
-import { CSSProperties } from "@material-ui/styles"
 import cn from "classnames"
 
 const drawerWidth = 240
 
-const useStyles = makeStyles(
-  (
-    theme: Theme
-  ): Record<"drawer" | "drawerPaper" | "toolbar" | "drag", CSSProperties> =>
-    createStyles({
-      drawer: {
-        width: drawerWidth,
-        flexShrink: 0
-      },
-      drawerPaper: {
-        width: drawerWidth
-      },
-      toolbar: theme.mixins.toolbar,
-      drag: {
-        userSelect: "none",
-        WebkitAppRegion: "drag"
-      }
-    })
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0
+    },
+    drawerPaper: {
+      width: drawerWidth
+    },
+    toolbar: theme.mixins.toolbar,
+    drag: {
+      userSelect: "none",
+      WebkitAppRegion: "drag"
+    }
+  })
 )
 
-const NavDrawer = (): ReactElement => {
+const NavDrawer: FC = (): ReactElement => {
   const classes = useStyles()
 
   return (

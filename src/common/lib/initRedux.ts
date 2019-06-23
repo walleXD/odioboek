@@ -3,6 +3,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import logger from "redux-logger"
 import { persistStore, Persistor, persistReducer } from "redux-persist"
 import createElectronStorage from "redux-persist-electron-storage"
+import thunk from "redux-thunk"
 
 import rootReducer from "./rootReducer"
 
@@ -13,7 +14,7 @@ export interface CreateStore {
 
 export default (dev: boolean): CreateStore => {
   // configure middlewares
-  const middlewares: Middleware[] = []
+  const middlewares: Middleware[] = [thunk]
   const devMiddlewares: Middleware[] = [logger]
 
   if (dev) middlewares.concat(devMiddlewares)

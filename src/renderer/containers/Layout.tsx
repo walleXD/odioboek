@@ -2,23 +2,21 @@ import React, { FC, ReactElement } from "react"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles"
-import { CSSProperties } from "@material-ui/styles"
 
-import TopBar from "../componenets/TopBar"
-import NavDrawer from "../componenets/NavDrawer"
+import TopBar from "../components/TopBar"
+import NavDrawer from "../components/NavDrawer"
 
 const drawerWidth = 240
 
-const useStyles = makeStyles(
-  (theme: Theme): Record<"content", CSSProperties> =>
-    createStyles({
-      content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-        marginLeft: drawerWidth
-      }
-    })
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    content: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.default,
+      padding: theme.spacing(3),
+      marginLeft: drawerWidth
+    }
+  })
 )
 
 interface Props {
@@ -27,21 +25,21 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ title, children }): ReactElement => {
-  const classes = useStyles()
+  const { content } = useStyles()
 
   const main = (
-    <Container>
-      <Box>{children}</Box>
-    </Container>
+    <>
+      <NavDrawer />
+      <Container>
+        <Box>{children}</Box>
+      </Container>
+    </>
   )
 
   return (
     <>
-      <header>
-        <TopBar title={title} />
-        <NavDrawer />
-      </header>
-      <main className={classes.content}>{main}</main>
+      <TopBar title={title} />
+      <main className={content}>{main}</main>
     </>
   )
 }
