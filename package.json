@@ -55,7 +55,7 @@
     "@typescript-eslint/parser": "^1.10.2",
     "coveralls": "^3.0.4",
     "devtron": "^1.4.0",
-    "electron": "^4.0.1",
+    "electron": "^15.5.5",
     "electron-builder": "^20.44.4",
     "electron-devtools-installer": "^2.2.4",
     "electron-webpack": "^2.7.2",
